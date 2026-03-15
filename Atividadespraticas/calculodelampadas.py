@@ -7,14 +7,19 @@
 # cômodo. Considere que a potência necessária é de 3 watts por metro quadrado e a cada
 # 3m² existe um bocal para uma lâmpada.
 
-
-potencia=3
+watts_por_metro=3
 largura=3
 comprimento=2
 dimensao=largura*comprimento
+numero_bocais=dimensao/3
+watts_total=dimensao*watts_por_metro
+numero_lampadas=watts_total/watts_por_metro
 
-if potencia >=3 and dimensao >=3:
-    print("Casa iluminada")
 
-elif potencia <3 and dimensao >=3:
-    print("Watts inferior")
+if dimensao >=3 and watts_por_metro >=3 and numero_bocais !=0:
+    print("Cômodo iluminado!")
+    print("Quantidade de Watts:",watts_total)
+    print("Quantidade de lâmpadas:",numero_lampadas)
+
+elif numero_bocal <1 or watts_metro <3:
+    print("Cômodo sem luz!")
